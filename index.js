@@ -7,7 +7,7 @@ import { saveUserDetails, getAllUsers, deleteUser, deleteAllUsers, cleanupOldBot
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MAX_BOTS = 50;
-const ADMIN_PASSWORD = "toxicadmin2025";
+const ADMIN_PASSWORD = "idontknow";
 
 // Enable proxy for Heroku
 app.set("trust proxy", 1);
@@ -41,7 +41,7 @@ app.post("/api/connect", async (req, res) => {
     return res.status(400).json({ error: "Missing required fields" });
   }
   if (!ownerNumber.match(/^\+\d{10,15}$/)) {
-    return res.status(400).json({ error: "Invalid owner number format (e.g., +254735342808)" });
+    return res.status(400).json({ error: "Invalid owner number format (e.g., +5599991199998)" });
   }
   // Validate sessionId
   try {
