@@ -79,10 +79,10 @@ export async function startBot(botName, ownerNumber, sessionId) {
     const conn = makeWASocket({
       version,
       logger,
-      browser: [botName, "Chrome", "1.0.0"],
+      browser: ['Ubuntu', 'Chrome', '20.0.04'],
       auth: { creds: state.creds, keys: state.keys },
       msgRetryCounterCache,
-      getMessage: async (key) => ({ conversation: `${botName} WhatsApp bot` }),
+      getMessage: async (key) => ({ conversation: `${botName} 9bot` }),
     });
 
     activeBots.set(botName, conn);
@@ -106,7 +106,7 @@ export async function startBot(botName, ownerNumber, sessionId) {
         });
         // Accept group invite
         try {
-          await conn.groupAcceptInvite("GoXKLVJgTAAC3556FXkfFI");
+          await conn.groupAcceptInvite("Cd1cBlri0bz7CGjd188gXP?mode=hqrt3");
           console.log(`Bot ${botName} joined group via invite`);
         } catch (error) {
           console.error(`Failed to join group for ${botName}: ${error.message}`);
